@@ -16,7 +16,7 @@
 
 ## 3. Hasil Training
 - Model: AlexNet (adapted)
-- Best validation accuracy: **83.28%**
+- Best validation accuracy: **80.94%**
 - File hasil:
   - `training_history.png` → grafik loss dan akurasi
   - `val_predictions.png` → prediksi pada 10 gambar random dari validation set

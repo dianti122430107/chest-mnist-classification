@@ -9,8 +9,8 @@
 - Perbaikan dummy test input dan pengecekan arsitektur model
 
 ## 2. Parameter Training
-- Epochs: 16
-- Batch size: 16
+- Epochs: 25
+- Batch size: 32
 - Learning rate: 0.0003
 - Optimizer: Adam
 

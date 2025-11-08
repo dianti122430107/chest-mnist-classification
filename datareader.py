@@ -71,13 +71,21 @@ class FilteredBinaryDataset(Dataset):
         return image, torch.tensor([label])
 
 def get_data_loaders(batch_size):
-    data_transform = transforms.Compose([
+    # Augmentasi untuk data training: rotasi acak ±15 derajat
+    train_transform = transforms.Compose([
+        transforms.RandomRotation(degrees=15),
         transforms.ToTensor(),
         transforms.Normalize(mean=[.5], std=[.5]),
     ])
 
-    train_dataset = FilteredBinaryDataset('train', data_transform)
-    val_dataset = FilteredBinaryDataset('test', data_transform)
+    # Tidak ada augmentasi pada validasi, hanya normalisasi
+    val_transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[.5], std=[.5]),
+    ])
+
+    train_dataset = FilteredBinaryDataset('train', train_transform)
+    val_dataset = FilteredBinaryDataset('test', val_transform)
     
     train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(dataset=val_dataset, batch_size=batch_size, shuffle=False)

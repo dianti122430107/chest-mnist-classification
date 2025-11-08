@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from utils import plot_training_history, visualize_random_val_predictions
 
 # --- Hyperparameter ---
-EPOCHS = 16
-BATCH_SIZE = 16
+EPOCHS = 25
+BATCH_SIZE = 32
 LEARNING_RATE = 0.0003
 
 def train():
